@@ -1,7 +1,7 @@
 package com.mobiapp.rootinterview.activity;
 
 /**
- * Created by Nayank
+ * Created by Teddy2005
  */
 
 import android.content.Context;
