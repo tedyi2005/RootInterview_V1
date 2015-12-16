@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#0039e6</color>
+    <color name="colorPrimaryDark">#0033cc</color>
+    <color name="textColorPrimary">#FFFFFF</color>
+    <color name="windowBackground">#FFFFFF</color>
+    <color name="navigationBarColor">#000000</color>
+    <color name="colorAccent">#FF80AB</color>
+
+    <color name="black_overlay">#66000000</color>
+    <color name="list_item_title">#fff</color>
+    <color name="list_background">#303030</color>
+    <color name="list_background_pressed">#992416</color>
+    <color name="list_divider">#272727</color>
+    <color name="counter_text_bg">#626262</color>
+    <color name="counter_text_color">#c5c4c4</color>
+    <color name="trasparent">#00ffffff</color>
+    <color name="trasparent_bg">#80000000</color>
+    <color name="rounded_sub_button">#e6e6e6</color>
+    <!-- #dddddd -->
+    <color name="screen_back_color">#75c7f0</color>
+    <color name="button_color">#0d78a3</color>
+    <color name="submit_button_text">#464646</color>
+    <color name="form_edittext_text">#cccccc</color>
+    <color name="form_edittext_hintbutton">#7d7d7d</color>
+    <color name="facebook">#3B5998</color>
+    <color name="green">#1F8F0F</color>
+    <color name="white">#FFFFFF</color>
+    <color name="cyan">#0D9ED0</color>
+    <color name="pink">#ec008c</color>
+    <color name="purple">#9e00a5</color>
+    <color name="Orchid">#DA70D6</color>
+    <color name="FireBrick">#B22222</color>
+    <color name="MidnightBlue">#191970</color>
+    <color name="faintblue">#B8DBFF</color>
+    <color name="footer">#ADD8E6</color>
+</resources>

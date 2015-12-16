@@ -1,0 +1,44 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:background="#0099cc"
+    tools:context="com.mobiapp.rootinterview.activity.InterviewActivity">
+
+    <!-- The primary full-screen view. This can be replaced with whatever view
+         is needed to present your content, e.g. VideoView, SurfaceView,
+         TextureView, etc. -->
+    <ListView
+        android:id="@+id/list"
+        android:layout_marginTop="45dp"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"/>
+
+    <!-- This FrameLayout insets its children based on system windows using
+         android:fitsSystemWindows. -->
+    <FrameLayout android:layout_width="match_parent" android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <LinearLayout android:id="@+id/fullscreen_content_controls" style="?metaButtonBarStyle"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            android:orientation="horizontal"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            tools:ignore="UselessParent">
+
+
+            <Button
+                android:id="@+id/btnrefresh"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:text="Refresh"/>
+
+            <Button
+                android:id="@+id/btndone"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:text="Done"/>
+
+        </LinearLayout>
+    </FrameLayout>
+
+</FrameLayout>

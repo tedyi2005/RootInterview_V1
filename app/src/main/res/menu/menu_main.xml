@@ -1,0 +1,32 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity"
+    android:menuCategory="system">
+
+    <item
+        android:id="@+id/action_delitems"
+        android:icon="@drawable/ic_action_del_itemlist"
+        android:orderInCategory="1"
+        android:title="@string/action_delitems"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_notification"
+        android:icon="@drawable/ic_action_notification"
+        android:orderInCategory="2"
+        android:title="@string/action_notification"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_search"
+        android:icon="@drawable/ic_action_search"
+        android:orderInCategory="3"
+        android:title="@string/action_settings"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_scan"
+        android:icon="@drawable/ic_action_scan"
+        android:orderInCategory="3"
+        android:title="@string/action_scan"
+        app:showAsAction="never" />
+</menu>

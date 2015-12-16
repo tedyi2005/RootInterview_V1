@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    //Icon path from drawable folder
+
+    <integer-array name="drawer_icon_ids">
+        <item>@drawable/ic_action_home</item>
+        <item>@drawable/ic_action_viewimg</item>
+        <!--<item>@drawable/ic_action_messages</item>
+        <item>@drawable/ic_action_reg_for_notification</item>
+        <item>@drawable/ic_action_help</item>
+        <item>@drawable/ic_action_logout</item>-->
+    </integer-array>
+
+</resources>
