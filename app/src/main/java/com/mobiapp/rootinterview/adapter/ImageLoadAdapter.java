@@ -4,19 +4,18 @@ import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.view.View.OnClickListener;
 
 import com.mobiapp.rootinterview.R;
 import com.mobiapp.rootinterview.activity.InterviewActivity;
-import com.mobiapp.rootinterview.activity.MainActivity;
 import com.mobiapp.rootinterview.common.ImageLoader;
 
 /**
- * Created by Sanmol on 12/16/2015.
+ * Created by Tedyi2005 on 12/16/2015.
  */
 public class ImageLoadAdapter extends BaseAdapter implements OnClickListener{
 

@@ -1,7 +1,7 @@
 package com.mobiapp.rootinterview.adapter;
 
 /**
- * Created by Nayank
+ * Created by Tedyi2005
  */
 
 import android.content.Context;

@@ -1,15 +1,16 @@
 package com.mobiapp.rootinterview.common;
 
 /**
- * Created by Sanmol on 12/16/2015.
+ * Created by Tedyi2005 on 12/16/2015.
  */
+import android.graphics.Bitmap;
+import android.util.Log;
+
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Map.Entry;
-import android.graphics.Bitmap;
-import android.util.Log;
 public class MemoryCache {
     private static final String TAG = "MemoryCache";
 

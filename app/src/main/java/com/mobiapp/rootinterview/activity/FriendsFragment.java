@@ -11,7 +11,7 @@ import com.mobiapp.rootinterview.R;
 
 
 /**
- * Created by Nayank
+ * Created by Tedyi2005
  */
 public class FriendsFragment extends Fragment {
 
