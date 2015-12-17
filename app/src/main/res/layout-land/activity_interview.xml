@@ -43,6 +43,13 @@
                 android:text="Done"/>
 
         </LinearLayout>
+        <ProgressBar
+            style="?android:attr/progressBarStyleSmall"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:id="@+id/progressBar"
+            android:layout_gravity="center"
+            android:visibility="invisible"/>
     </FrameLayout>
 
 </FrameLayout>

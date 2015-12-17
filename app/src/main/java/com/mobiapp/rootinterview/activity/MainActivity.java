@@ -22,7 +22,7 @@ import java.util.HashMap;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements FragmentDrawer.FragmentDrawerListener {
-    private static String TAG = com.mobiapp.rootinterview.activity.MainActivity.class.getSimpleName();
+    private static String TAG = MainActivity.class.getSimpleName();
     List<DrawerItem> dataList;
     private Toolbar mToolbar;
     private FragmentDrawer drawerFragment;
@@ -129,11 +129,18 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
             case 1:
                 /*fragment = new FriendsFragment();
                 title = getString(R.string.title_friends);*/
-
-                 Intent intent=new Intent(this,InterviewActivity.class);
-                startActivity(intent);
-
-
+                isInternetPresent = checkInternet.isConnectingToInternet();
+                if (isInternetPresent) {
+                    // Toast.makeText(this, "Internet Connected",
+                    // Toast.LENGTH_LONG).show();
+                    Intent intent=new Intent(this,InterviewActivity.class);
+                    startActivity(intent);
+                }
+                else {
+                    Toast.makeText(this,
+                            "No Internet Connection. Please turn on the connection.",
+                            Toast.LENGTH_LONG).show();
+                }
                 break;
             case 2:
                 fragment = new MessagesFragment();

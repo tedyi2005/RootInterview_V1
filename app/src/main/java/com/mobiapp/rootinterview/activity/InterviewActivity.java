@@ -5,18 +5,22 @@ import com.mobiapp.rootinterview.activity.util.SystemUiHider;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
 import android.view.View.OnClickListener;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.mobiapp.rootinterview.R;
 import com.mobiapp.rootinterview.adapter.ImageLoadAdapter;
+import com.mobiapp.rootinterview.common.CheckIntnetConnection;
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
@@ -32,7 +36,8 @@ public class InterviewActivity extends Activity {
     ListView list;
     ImageLoadAdapter adapter;
     private static final boolean AUTO_HIDE = true;
-
+    Boolean isInternetPresent = false;
+    CheckIntnetConnection checkInternet;
     /**
      * If {@link #AUTO_HIDE} is set, the number of milliseconds to wait after
      * user interaction before hiding the system UI.
@@ -54,6 +59,7 @@ public class InterviewActivity extends Activity {
      * The instance of the {@link SystemUiHider} for this activity.
      */
     private SystemUiHider mSystemUiHider;
+    ProgressBar progressbarPG;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,19 +68,16 @@ public class InterviewActivity extends Activity {
         setContentView(R.layout.activity_interview);
 
         final View controlsView = findViewById(R.id.fullscreen_content_controls);
-
+        progressbarPG = (ProgressBar) findViewById(R.id.progressBar);
         //Code added by Nayan
-        list=(ListView)findViewById(R.id.list);
-
+        list = (ListView) findViewById(R.id.list);
         // Create custom adapter for listview
-        adapter=new ImageLoadAdapter(this, mStrings);
-
+        adapter = new ImageLoadAdapter(this, mStrings);
         //Set adapter to listview
         list.setAdapter(adapter);
-
-        Button refreshBTN=(Button)findViewById(R.id.btnrefresh);
+        Button refreshBTN = (Button) findViewById(R.id.btnrefresh);
         refreshBTN.setOnClickListener(listener);
-        Button doneBTN=(Button)findViewById(R.id.btndone);
+        Button doneBTN = (Button) findViewById(R.id.btndone);
         doneBTN.setOnClickListener(listener);
     }
 
@@ -93,9 +96,11 @@ public class InterviewActivity extends Activity {
     Runnable mHideRunnable = new Runnable() {
         @Override
         public void run() {
-           // mSystemUiHider.hide();
+
+            // mSystemUiHider.hide();
         }
     };
+
     /**
      * Schedules a call to hide() in [delay] milliseconds, canceling any
      * previously scheduled calls.
@@ -104,32 +109,41 @@ public class InterviewActivity extends Activity {
         mHideHandler.removeCallbacks(mHideRunnable);
         mHideHandler.postDelayed(mHideRunnable, delayMillis);
     }
+
     @Override
-    public void onDestroy()
-    {
+    public void onDestroy() {
         // Remove adapter refference from list
         list.setAdapter(null);
         super.onDestroy();
     }
-    public OnClickListener listener=new OnClickListener(){
+
+    public OnClickListener listener = new OnClickListener() {
         @Override
         public void onClick(View v) {
 
-            switch(v.getId()){
+            switch (v.getId()) {
                 case R.id.btnrefresh:
-                adapter.imageLoader.clearCache();
-                adapter.notifyDataSetChanged();
+                    checkInternet = new CheckIntnetConnection(getApplicationContext());
+                    isInternetPresent = checkInternet.isConnectingToInternet();
+                    if (isInternetPresent) {
+                        adapter.imageLoader.clearCache();
+                        adapter.notifyDataSetChanged();
+                    } else {
+                        Toast.makeText(InterviewActivity.this,
+                                "No Internet Connection. Please turn on the connection.",
+                                Toast.LENGTH_LONG).show();
+                    }
                     break;
                 case R.id.btndone:
-                    Intent i=new Intent(InterviewActivity.this,MainActivity.class);
+                    Intent i = new Intent(InterviewActivity.this, MainActivity.class);
                     startActivity(i);
                     finish();
                     break;
             }
         }
     };
-    public void onItemClick(int mPosition)
-    {
+
+    public void onItemClick(int mPosition) {
         String tempValues = mStrings[mPosition];
 
         Toast.makeText(InterviewActivity.this,
@@ -139,7 +153,7 @@ public class InterviewActivity extends Activity {
 
     // Image urls used in LazyImageLoadAdapter.java file
 
-    private String[] mStrings={
+    private String[] mStrings = {
 
             "https://s3-us-west-2.amazonaws.com/root-interview/1.jpg",
             "https://s3-us-west-2.amazonaws.com/root-interview/2.jpg",
@@ -147,4 +161,6 @@ public class InterviewActivity extends Activity {
             "https://s3-us-west-2.amazonaws.com/root-interview/4.jpg",
             "https://s3-us-west-2.amazonaws.com/root-interview/5.jpg"
     };
+
+
 }
