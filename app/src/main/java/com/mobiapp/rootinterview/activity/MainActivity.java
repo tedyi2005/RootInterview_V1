@@ -18,7 +18,6 @@ import com.mobiapp.rootinterview.R;
 import com.mobiapp.rootinterview.common.CheckIntnetConnection;
 import com.mobiapp.rootinterview.model.DrawerItem;
 
-import java.util.HashMap;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements FragmentDrawer.FragmentDrawerListener {
@@ -62,8 +61,8 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
 
         // check for Internet status
         if (isInternetPresent) {
-            // Toast.makeText(this, "Internet Connected",
-            // Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Internet Connected",
+            Toast.LENGTH_LONG).show();
         } else {
             Toast.makeText(this,
                     "No Internet Connection. Please turn on the connection.",
@@ -135,6 +134,7 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
                     // Toast.LENGTH_LONG).show();
                     Intent intent=new Intent(this,InterviewActivity.class);
                     startActivity(intent);
+
                 }
                 else {
                     Toast.makeText(this,
