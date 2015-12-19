@@ -3,6 +3,7 @@ package com.mobiapp.rootinterview.common;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+// THIS CLASS SHOULD BE REFERED AS
 
 public class CheckIntnetConnection {
 	
